@@ -5,4 +5,5 @@ install:
 - pipenv install
 
 script:
+- black --check blogging blogsite polling
 - python blogsite/manage.py test
