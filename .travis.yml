@@ -5,4 +5,4 @@ install:
 - pipenv install
 
 script:
-- python manage.py test
+- python blogsite/manage.py test
