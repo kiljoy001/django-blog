@@ -10,4 +10,4 @@ class Poll(models.Model):
         return self.title
 
     class Meta:
-        app_label = 'polling'
+        app_label = "polling"

@@ -4,8 +4,8 @@ from polling.models import Poll
 
 
 def list_view(request):
-    context = {'polls': Poll.objects.all()}
-    return render(request, 'polling/list.html', context)
+    context = {"polls": Poll.objects.all()}
+    return render(request, "polling/list.html", context)
 
 
 def detail_view(request, poll_id):
@@ -14,12 +14,12 @@ def detail_view(request, poll_id):
     except Poll.DoesNotExist:
         raise Http404
 
-    if request.method == 'POST':
+    if request.method == "POST":
         if request.POST.get("vote") == "Yes":
             poll.score += 1
         else:
             poll.score -= 1
         poll.save()
 
-    context = {'poll': poll}
-    return render(request, 'polling/detail.html', context)
+    context = {"poll": poll}
+    return render(request, "polling/detail.html", context)
